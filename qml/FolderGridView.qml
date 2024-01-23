@@ -65,6 +65,8 @@ GridView {
     property bool scrollDown: false
 
     signal keyPress(var event)
+    signal backPress()
+    signal forwardPress()
 
     cacheBuffer: Math.max(0, control.height * 1.5)
     reuseItems: true
@@ -468,6 +470,13 @@ GridView {
 
         onClicked: {
             clearPressState()
+
+            if (mouse.buttons & Qt.BackButton) {
+              control.backPress()
+            }
+            if (mouse.buttons & Qt.ForwardButton){
+              control.forwardPress()
+            }
 
             if (mouse.buttons & Qt.RightButton) {
                 dirModel.openContextMenu(null, mouse.modifiers)

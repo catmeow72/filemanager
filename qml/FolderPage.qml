@@ -337,6 +337,12 @@ Item {
             onCountChanged: {
                 _fileTips.visible = count === 0
             }
+            onForwardPressed: {
+              dirModel.goForward();
+            }
+            onBackPressed:{
+              dirModel.goBack();
+            }
         }
     }
 
@@ -355,6 +361,12 @@ Item {
 
             onCountChanged: {
                 _fileTips.visible = count === 0
+            }
+            onForwardPressed: {
+              dirModel.goForward();
+            }
+            onBackPressed:{
+              dirModel.goBack();
             }
 
             delegate: FolderListItem {}
