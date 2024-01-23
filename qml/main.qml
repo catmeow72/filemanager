@@ -129,4 +129,15 @@ FishUI.Window {
             }
         }
     }
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.ForwardButton|Qt.BackButton
+        onClicked: {
+          if (mouse.button == Qt.ForwardButton) {
+            _folderPage.goForward()
+          } else if (mouse.button == Qt.BackButton) {
+            _folderPage.goBack()
+          }
+        }
+    }
 }
