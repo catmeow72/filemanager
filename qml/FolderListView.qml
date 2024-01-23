@@ -52,8 +52,6 @@ ListView {
     property variant cachedRectangleSelection: null
 
     signal keyPress(var event)
-    signal backPress()
-    signal forwardPress()
 
     clip: true
     cacheBuffer: width
@@ -290,19 +288,11 @@ ListView {
                     dirModel.openContextMenu(null, mouse.modifiers)
                     mouse.accepted = true
                 }
-
             }
         }
 
         onClicked: {
             clearPressState()
-
-            if (mouse.buttons & Qt.BackButton) {
-              control.backPress()
-            }
-            if (mouse.buttons & Qt.ForwardButton){
-              control.forwardPress()
-            }
 
             if (!hoveredItem || hoveredItem.blank || control.currentIndex === -1 || control.ctrlPressed
                     || control.shiftPressed) {
