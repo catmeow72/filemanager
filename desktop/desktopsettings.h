@@ -28,7 +28,6 @@ class DesktopSettings : public QObject
     Q_OBJECT
     Q_PROPERTY(QString wallpaper READ wallpaper NOTIFY wallpaperChanged)
     Q_PROPERTY(bool dimsWallpaper READ dimsWallpaper NOTIFY dimsWallpaperChanged)
-    Q_PROPERTY(bool backgroundVisible READ backgroundVisible NOTIFY backgroundVisibleChanged)
     Q_PROPERTY(int backgroundType READ backgroundType NOTIFY backgroundTypeChanged)
     Q_PROPERTY(QString backgroundColor READ backgroundColor NOTIFY backgroundColorChanged)
 
@@ -37,7 +36,6 @@ public:
 
     QString wallpaper() const;
     bool dimsWallpaper() const;
-    bool backgroundVisible() const;
     int backgroundType() const;
     QString backgroundColor() const;
 
@@ -48,7 +46,6 @@ signals:
     void dimsWallpaperChanged();
     void backgroundColorChanged();
     void backgroundTypeChanged();
-    void backgroundVisibleChanged();
     
 private slots:
     void init();

@@ -26,7 +26,6 @@ Item {
 
         Rectangle {
             anchors.fill: parent
-            visible: settings.backgroundVisible
             color: settings.backgroundColor
         }
     }
